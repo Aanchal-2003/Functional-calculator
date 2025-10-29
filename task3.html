@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI</title>
+    <style>
+        .simple-container {
+            width: 600px;
+            height: 200px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            background-color: rgb(168, 250, 250);
+            margin: 100px auto;
+            text-align: center;
+            padding: 4px;
+        }
+        .table-box{
+            width: 600px;
+            height: 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        label{
+            font-size: 20px;
+        }
+        input{
+            margin: 10px;
+            font-size: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="simple-container">
+        <h2>Body Mass Index</h2>
+        <div class="table-box">
+            <table>
+            <tr>
+                <th>
+                    <label for="">Body Mass Index</label>
+                    <input type="text" name="" id="output" readonly>
+                </th>
+            </tr>
+            <tr>
+                <th>
+                    <label for="t">Weight Category</label>
+                    <input type="text" name="" id="output1" readonly>
+                </th>
+            </tr>
+        </table>
+        </div>
+
+
+    </div>
+
+    <script>
+        var output = document.querySelector("#output");
+        var output1 = document.querySelector("#output1");
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            function () {
+                var wgt = Number(prompt('Enter your Weight in kilograms'));
+                var hgt = Number(prompt('Enter your Height in meter'));
+                var outPut;
+                var outPut1;
+
+                outPut = wgt/(hgt*hgt);
+                if(outPut<18.5) {
+                    outPut1 = "Underweight"
+                }
+                else if (outPut>=18.5 && outPut<25) {
+                    outPut1 = "Normal Weight"
+                }
+                else if (outPut>=25 && outPut<30) {
+                    outPut1 = "Overweight"
+                }
+                else if (outPut>=30) {
+                    outPut1 = "Obese"
+                }
+                output.value = outPut
+                output1.value = outPut1
+            }
+        )
+    </script>
+</body>
+</html>

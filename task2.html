@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Interest</title>
+    <style>
+        .simple-container {
+            width: 600px;
+            height: 200px;
+            background-color: rgb(168, 250, 250);
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            margin: 100px auto;
+            text-align: center;
+            padding: 4px;
+        }
+
+        .table-box {
+            width: 600px;
+            height: 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        label{
+            font-size: 20px;
+        }
+        input{
+            margin: 10px;
+            font-size: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="simple-container">
+        <h2>Simple Interest</h2>
+        <div class="table-box">
+            <table>
+                <tr>
+                    <th>
+                        <label for="">Total Interest</label>
+                        <input type="text" name="" id="output" readonly>
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        <label for="t">Total Amount</label>
+                        <input type="text" name="" id="output1" readonly>
+                    </th>
+                </tr>
+            </table>
+        </div>
+
+
+    </div>
+
+    <script>
+        var output = document.querySelector("#output");
+        var output1 = document.querySelector("#output1");
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            function () {
+                var pri = Number(prompt('Enter the Principle Amount'));
+                var rate = Number(prompt('Enter Rate of Interest'));
+                var time = Number(prompt('Enter Time Period'));
+                var outPut;
+                var outPut1;
+
+                outPut = (pri * rate * time) / 100;
+                outPut1 = outPut + pri;
+
+                output.value = outPut
+                output1.value = outPut1
+            }
+        )
+    </script>
+</body>
+
+</html>

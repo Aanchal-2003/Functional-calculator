@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calorie</title>
+    <style>
+        .simple-container {
+            width: 600px;
+            height: 200px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            margin: 100px auto;
+            background-color: rgb(168, 250, 250);
+            text-align: center;
+            padding: 4px;
+        }
+
+        .table-box {
+            width: 600px;
+            height: 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        label{
+            font-size: 20px;
+        }
+        input{
+            margin: 10px;
+            font-size: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="simple-container">
+        <h2>Calorie</h2>
+        <div class="table-box">
+            <table>
+                <tr>
+                    <th>
+                        <label for="">Gender</label>
+                        <input type="radio" name="gender" id="output1">Male
+                        <input type="radio" name="gender" id="output2">Female
+
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        <label for="t">Daily Calorie Requirement</label>
+                        <input type="text" name="" id="out" readonly>
+                    </th>
+                </tr>
+            </table>
+        </div>
+
+        <script>
+            var output1 = document.querySelector("#output1");
+            var output2 = document.querySelector("#output2");
+            var out = document.querySelector("#out");
+
+            output1.addEventListener(
+                "click",
+                function () {
+                    var wgt = Number(prompt('Enter your Weight in kilograms'));
+                    var hgt = Number(prompt('Enter your Height in cm'));
+                    var age = Number(prompt('Enter your Age in years'));
+                    var outPut;
+
+                    outPut = ((10 * wgt) + (6.25 * hgt) - (5 * age) + 5);
+
+                    out.value = outPut
+                }
+            )
+            output2.addEventListener(
+                "click",
+                function () {
+                    var wgt = Number(prompt('Enter your Weight in kilograms'));
+                    var hgt = Number(prompt('Enter your Height in cm'));
+                    var age = Number(prompt('Enter your Age in years'));
+                    var outPut;
+
+                    outPut = ((10 * wgt) + (6.25 * hgt) - (5 * age) -161);
+
+                    out.value = outPut
+                }
+            )
+        </script>
+</body>
+
+</html>
